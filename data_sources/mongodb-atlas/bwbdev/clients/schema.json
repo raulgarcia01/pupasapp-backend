@@ -3,6 +3,9 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "required": [
+            "givenName", "familyName"
+        ],
         "emails": {
             "bsonType": "array",
             "items": {
@@ -18,13 +21,15 @@
             }
         },
         "familyName": {
-            "bsonType": "string"
+            "bsonType": "string",
+            "description": "The 'familiy name' must be a string and is required"
         },
         "gender": {
             "bsonType": "string"
         },
         "givenName": {
-            "bsonType": "string"
+            "bsonType": "string",
+            "description": "The 'Name' must be a string and is required"
         },
         "phones": {
             "bsonType": "array",
