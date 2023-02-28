@@ -1,1 +1,7 @@
-{}
+{
+  "local_id": {
+    "foreignKey": "_id",
+    "ref": "#/relationship/mongodb-atlas/bwbdev/locals",
+    "isList": false
+  }
+}
