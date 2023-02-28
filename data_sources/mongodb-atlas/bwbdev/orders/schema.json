@@ -5,12 +5,12 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "local": {
-            "bsonType": "string",
+        "local_id": {
+            "bsonType": "objectId",
             "description": "Local ID must be a associated and is required"
         },
-        "client": {
-            "bsonType": "string",
+        "client_id": {
+            "bsonType": "objectId",
             "description": "Client ID must be a associated and is required"
         },
         "details": {
@@ -21,8 +21,8 @@
                 "bsonType": "object",
                 "required": [ "product", "quantity"],
                 "properties": {
-                    "product": {
-                        "bsonType": "string",
+                    "product_id": {
+                        "bsonType": "objectId",
                         "description": "Product ID must be a associated and is required"
                     },
                     "quantity": {
