@@ -1,0 +1,65 @@
+{
+    "title": "order",
+    "required": [ "local", "client", "details", "subtotal", "total" ],
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "local": {
+            "bsonType": "string",
+            "description": "Local ID must be a associated and is required"
+        },
+        "client": {
+            "bsonType": "string",
+            "description": "Client ID must be a associated and is required"
+        },
+        "details": {
+            "bsonType": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+                "bsonType": "object",
+                "required": [ "product", "quantity"],
+                "properties": {
+                    "product": {
+                        "bsonType": "string",
+                        "description": "Product ID must be a associated and is required"
+                    },
+                    "quantity": {
+                        "bsonType": "int",
+                        "description": "Quantity must be a number and is required",
+                        "minLength": 1,
+                        "maxLength": 9999
+                    },
+                    "cost": {
+                        "bsonType": "double",
+                        "description": "Product cost must be a number and is required",
+                        "minLength": 1,
+                        "maxLength": 9999
+                    },
+                    "value": {
+                        "bsonType": "double",
+                        "description": "Cost value must be a number and is required",
+                        "minLength": 1,
+                        "maxLength": 9999
+                    }
+                }
+            }
+        },
+        "subtotal": {
+            "bsonType": "double",
+            "description": "Sub total must be a number and is required",
+            "minLength": 0
+        },
+        "tax": {
+            "bsonType": "double",
+            "description": "Tax value must be a number and is required",
+             "minLength": 0
+        },
+        "total": {
+            "bsonType": "double",
+            "description": "Total must be a number and is required",
+            "minLength": 0
+        }
+    }
+}

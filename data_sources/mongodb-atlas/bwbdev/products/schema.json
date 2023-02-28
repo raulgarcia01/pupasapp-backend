@@ -1,5 +1,5 @@
 {
-    "title": "products",
+    "title": "product",
     "required": [ "productName", "type", "value" ],
     "properties": {
         "_id": {
