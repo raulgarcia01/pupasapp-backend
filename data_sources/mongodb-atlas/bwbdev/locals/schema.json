@@ -1,0 +1,52 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "emails": {
+            "bsonType": "object",
+            "description": "Must enter one valid email address to be notified",
+            "properties": {
+                "address": {
+                    "bsonType": "string",
+                    "description": "The 'email address' must be a string and is required"
+                },
+                "location": {
+                    "description": "Must be either Work, Personal or Other",
+                    "enum": [
+                        "Work",
+                        "Personal",
+                        "Other"
+                    ]
+                }
+            },
+            "required": [
+                "address"
+            ]
+        },
+        "localName": {
+            "bsonType": "string",
+            "description": "The 'name' must be a string and is required"
+        },
+        "phones": {
+            "bsonType": "object",
+            "properties": {
+                "areaCode": {
+                    "bsonType": "string",
+                    "description": "The 'areaCode' must be a string and is required"
+                },
+                "number": {
+                    "bsonType": "double",
+                    "description": "The 'number' must be a number and is required"
+                }
+            }
+        },
+        "picture": {
+            "bsonType": [
+                "string"
+            ],
+            "description": "'picture' must be a valid image if the field exists"
+        }
+    },
+    "title": "locals"
+}

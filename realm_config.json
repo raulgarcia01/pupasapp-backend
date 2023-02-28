@@ -1,0 +1,9 @@
+{
+    "app_id": "pupas-backdev-gugas",
+    "config_version": 20210101,
+    "name": "pupas-backdev",
+    "location": "US-VA",
+    "provider_region": "azure-eastus2",
+    "deployment_model": "LOCAL",
+    "environment": "development"
+}

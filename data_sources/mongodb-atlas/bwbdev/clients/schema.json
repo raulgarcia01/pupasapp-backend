@@ -1,0 +1,48 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "emails": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "address": {
+                        "bsonType": "string"
+                    },
+                    "location": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "familyName": {
+            "bsonType": "string"
+        },
+        "gender": {
+            "bsonType": "string"
+        },
+        "givenName": {
+            "bsonType": "string"
+        },
+        "phones": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "areaCode": {
+                        "bsonType": "string"
+                    },
+                    "location": {
+                        "bsonType": "string"
+                    },
+                    "number": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        }
+    },
+    "title": "client"
+}

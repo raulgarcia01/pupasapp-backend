@@ -1,0 +1,29 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "picture": {
+            "bsonType": [
+                "string"
+            ],
+            "description": "'picture' must be a valid image if the field exists"
+        },
+        "productName": {
+            "bsonType": "string",
+            "description": "The 'name' must be a string and is required"
+        },
+        "type": {
+            "description": "Must be either Food or Drink and is required",
+            "enum": [
+                "Food",
+                "Drink"
+            ]
+        },
+        "value": {
+            "bsonType": "double",
+            "description": "The 'value' must be a string and is required"
+        }
+    },
+    "title": "products"
+}
