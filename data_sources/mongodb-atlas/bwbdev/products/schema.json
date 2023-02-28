@@ -1,29 +1,29 @@
 {
+    "title": "products",
+    "required": [ "productName", "type", "value" ],
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
-        "picture": {
-            "bsonType": [
-                "string"
-            ],
-            "description": "'picture' must be a valid image if the field exists"
-        },
         "productName": {
             "bsonType": "string",
-            "description": "The 'name' must be a string and is required"
+            "description": "Product name must be a string and is required",
+            "minLength": 5,
+            "maxLength": 100
         },
         "type": {
-            "description": "Must be either Food or Drink and is required",
-            "enum": [
-                "Food",
-                "Drink"
-            ]
+            "description": "Must be either Food, Drinks or Others and is required",
+            "enum": [ "Food", "Drink", "Others"]
         },
         "value": {
             "bsonType": "double",
-            "description": "The 'value' must be a string and is required"
+            "description": "Value must be a number and is required",
+            "minimum": 0,
+            "maximum": 9999
+        },
+        "picture": {
+            "bsonType": "string",
+            "description": "Picture must be a valid image if the field exists"
         }
-    },
-    "title": "products"
+    }
 }

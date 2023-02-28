@@ -1,52 +1,62 @@
 {
+    "title": "locals",
+    "required": [ "localName", "phones", "emails" ],
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
-        "emails": {
-            "bsonType": "object",
-            "description": "Must enter one valid email address to be notified",
-            "properties": {
-                "address": {
-                    "bsonType": "string",
-                    "description": "The 'email address' must be a string and is required"
-                },
-                "location": {
-                    "description": "Must be either Work, Personal or Other",
-                    "enum": [
-                        "Work",
-                        "Personal",
-                        "Other"
-                    ]
-                }
-            },
-            "required": [
-                "address"
-            ]
-        },
         "localName": {
             "bsonType": "string",
-            "description": "The 'name' must be a string and is required"
+            "description": "Local name must be a string and is required"
         },
+        "picture": {
+            "bsonType": "string",
+            "description": "Picture must be a valid image if the field exists"
+        },   
         "phones": {
-            "bsonType": "object",
-            "properties": {
-                "areaCode": {
-                    "bsonType": "string",
-                    "description": "The 'areaCode' must be a string and is required"
-                },
-                "number": {
-                    "bsonType": "double",
-                    "description": "The 'number' must be a number and is required"
+            "bsonType": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+                "bsonType": "object",
+                "required": [ "areaCode", "number"],
+                "properties": {
+                    "areaCode": {
+                        "bsonType": "string",
+                        "description": "Area code must be a string and is required",
+                        "minLength": 2,
+                        "maxLength": 4
+                    },
+                    "number": {
+                        "bsonType": "string",
+                        "description": "Number must be a string and is required",
+                        "minLength": 8,
+                        "maxLength": 15
+                    }
                 }
             }
         },
-        "picture": {
-            "bsonType": [
-                "string"
-            ],
-            "description": "'picture' must be a valid image if the field exists"
+        "emails": {
+            "bsonType": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+                "bsonType": "object",                
+                "required": [ "address", "description"],
+                "properties": {
+                    "address": {
+                        "description": "Email must a string and is required",
+                        "bsonType": "string",
+                        "format": "email"
+                    },
+                    "description": {
+                        "bsonType": "string",
+                        "description": "Description must be a string and is required",
+                        "minLength": 5,
+                        "maxLength": 50
+                    }
+                }
+            }
         }
-    },
-    "title": "locals"
+    }
 }

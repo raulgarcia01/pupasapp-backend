@@ -13,14 +13,18 @@
         },
         "familyName": {
             "bsonType": "string",
-            "description": "Familiy name must be a string and is required",
+            "description": "Family name must be a string and is required",
             "minLength": 5,
             "maxLength": 25
         },
         "gender": {
             "enum": [ "M", "F"],
             "description": "Must be either Male, or Female"
-        },        
+        },
+        "picture": {
+            "bsonType": "string",
+            "description": "Picture must be a valid image if the field exists"
+        },   
         "phones": {
             "bsonType": "array",
             "minItems": 1,
@@ -47,7 +51,8 @@
                     }
                 }
             }
-        },"emails": {
+        },
+        "emails": {
             "bsonType": "array",
             "minItems": 1,
             "maxItems": 5,
