@@ -123,7 +123,8 @@
         "givenName",
         "familyName",
         "phones",
-        "emails"
+        "emails",
+        "type"
     ],
     "title": "user"
 }

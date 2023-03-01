@@ -3,9 +3,9 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "client_id": {
+        "user_id": {
             "bsonType": "objectId",
-            "description": "Client ID must be a associated and is required"
+            "description": "User ID must be a associated and is required"
         },
         "details": {
             "bsonType": "array",
@@ -64,8 +64,8 @@
         }
     },
     "required": [
-        "local",
-        "client",
+        "local_id",
+        "user_id",
         "details",
         "subtotal",
         "total"
