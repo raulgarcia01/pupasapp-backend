@@ -1,1 +1,43 @@
-{}
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "details": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "cost": {
+                        "bsonType": "double"
+                    },
+                    "product": {
+                        "bsonType": "string"
+                    },
+                    "quantity": {
+                        "bsonType": "double"
+                    },
+                    "value": {
+                        "bsonType": "double"
+                    }
+                }
+            }
+        },
+        "local": {
+            "bsonType": "string"
+        },
+        "subtotal": {
+            "bsonType": "double"
+        },
+        "tax": {
+            "bsonType": "double"
+        },
+        "total": {
+            "bsonType": "double"
+        },
+        "user": {
+            "bsonType": "string"
+        }
+    },
+    "title": "order"
+}
