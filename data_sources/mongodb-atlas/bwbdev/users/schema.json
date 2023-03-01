@@ -55,7 +55,7 @@
             "bsonType": "string",
             "description": "Family name must be a string and is required",
             "maxLength": 25,
-            "minLength": 5
+            "minLength": 2
         },
         "gender": {
             "description": "Must be either Male, or Female",
@@ -68,7 +68,7 @@
             "bsonType": "string",
             "description": "Name must be a string and is required",
             "maxLength": 25,
-            "minLength": 5
+            "minLength": 2
         },
         "phones": {
             "bsonType": "array",
