@@ -9,35 +9,66 @@
                 "bsonType": "object",
                 "properties": {
                     "cost": {
-                        "bsonType": "double"
+                        "bsonType": "double",
+                        "description": "Product cost must be a number and is required",
+                        "maxLength": 9999,
+                        "minLength": 1
                     },
                     "product": {
-                        "bsonType": "string"
+                        "bsonType": "objectId",
+                        "description": "Product ID must be a associated and is required"
                     },
                     "quantity": {
-                        "bsonType": "double"
+                        "bsonType": "int",
+                        "description": "Quantity must be a number and is required",
+                        "maxLength": 9999,
+                        "minLength": 1
                     },
                     "value": {
-                        "bsonType": "double"
+                        "bsonType": "double",
+                        "description": "Cost value must be a number and is required",
+                        "maxLength": 9999,
+                        "minLength": 1
                     }
-                }
-            }
+                },
+                "required": [
+                    "product",
+                    "quantity"
+                ]
+            },
+            "maxItems": 50,
+            "minItems": 1
         },
         "local": {
-            "bsonType": "objectId"
+            "bsonType": "objectId",
+            "description": "Local ID must be a associated and is required"
         },
         "subtotal": {
-            "bsonType": "double"
+            "bsonType": "double",
+            "description": "Sub total must be a number and is required",
+            "minLength": 0
         },
         "tax": {
-            "bsonType": "double"
+            "bsonType": "double",
+            "description": "Tax value must be a number and is required",
+            "minLength": 0
         },
         "total": {
-            "bsonType": "double"
+            "bsonType": "double",
+            "description": "Total must be a number and is required",
+            "minLength": 0
         },
         "user": {
-            "bsonType": "string"
+            "bsonType": "objectId",
+            "description": "User ID must be a associated and is required"
         }
     },
+    "required": [
+        "local",
+        "user",
+        "details",
+        "subtotal",
+        "total"
+    ],
     "title": "order"
 }
