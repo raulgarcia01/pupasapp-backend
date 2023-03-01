@@ -3,10 +3,6 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "user_id": {
-            "bsonType": "objectId",
-            "description": "User ID must be a associated and is required"
-        },
         "details": {
             "bsonType": "array",
             "items": {
@@ -61,6 +57,10 @@
             "bsonType": "double",
             "description": "Total must be a number and is required",
             "minLength": 0
+        },
+        "user_id": {
+            "bsonType": "objectId",
+            "description": "User ID must be a associated and is required"
         }
     },
     "required": [
