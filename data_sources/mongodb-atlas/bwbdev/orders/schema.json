@@ -14,7 +14,7 @@
                         "maxLength": 9999,
                         "minLength": 1
                     },
-                    "product_id": {
+                    "product": {
                         "bsonType": "objectId",
                         "description": "Product ID must be a associated and is required"
                     },
@@ -32,14 +32,13 @@
                     }
                 },
                 "required": [
-                    "product_id",
                     "quantity"
                 ]
             },
             "maxItems": 50,
             "minItems": 1
         },
-        "local_id": {
+        "local": {
             "bsonType": "objectId",
             "description": "Local ID must be a associated and is required"
         },
@@ -58,14 +57,12 @@
             "description": "Total must be a number and is required",
             "minLength": 0
         },
-        "user_id": {
+        "user": {
             "bsonType": "objectId",
             "description": "User ID must be a associated and is required"
         }
     },
     "required": [
-        "local_id",
-        "user_id",
         "details",
         "subtotal",
         "total"
