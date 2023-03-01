@@ -32,7 +32,7 @@
                     }
                 },
                 "required": [
-                    "product",
+                    "product_id",
                     "quantity"
                 ]
             },
