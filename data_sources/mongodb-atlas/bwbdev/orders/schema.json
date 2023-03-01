@@ -14,7 +14,7 @@
                         "maxLength": 9999,
                         "minLength": 1
                     },
-                    "product": {
+                    "productfk": {
                         "bsonType": "string",
                         "description": "Product ID must be a associated and is required"
                     },
@@ -38,7 +38,7 @@
             "maxItems": 50,
             "minItems": 1
         },
-        "local": {
+        "localfk": {
             "bsonType": "string",
             "description": "Local ID must be a associated and is required"
         },
@@ -57,7 +57,7 @@
             "description": "Total must be a number and is required",
             "minLength": 0
         },
-        "user": {
+        "userfk": {
             "bsonType": "string",
             "description": "User ID must be a associated and is required"
         }
