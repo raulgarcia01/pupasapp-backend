@@ -3,42 +3,51 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "authProviders": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "object",
-                "properties": {
-                    "pid": {
-                        "bsonType": "string"
-                    },
-                    "provider": {
-                        "bsonType": "string"
-                    }
-                }
-            }
-        },
         "emails": {
             "bsonType": "array",
             "items": {
                 "bsonType": "object",
                 "properties": {
                     "address": {
-                        "bsonType": "string"
+                        "bsonType": "string",
+                        "description": "Email must a string and is required",
+                        "format": "email"
                     },
                     "location": {
-                        "bsonType": "string"
+                        "description": "Must be either Work, Personal or Other",
+                        "enum": [
+                            "Work",
+                            "Personal",
+                            "Other"
+                        ]
                     }
-                }
-            }
+                },
+                "required": [
+                    "address",
+                    "location"
+                ]
+            },
+            "maxItems": 5,
+            "minItems": 1
         },
         "familyName": {
-            "bsonType": "string"
+            "bsonType": "string",
+            "description": "Family name must be a string and is required",
+            "maxLength": 25,
+            "minLength": 5
         },
         "gender": {
-            "bsonType": "string"
+            "description": "Must be either Male, or Female",
+            "enum": [
+                "M",
+                "F"
+            ]
         },
         "givenName": {
-            "bsonType": "string"
+            "bsonType": "string",
+            "description": "Name must be a string and is required",
+            "maxLength": 25,
+            "minLength": 5
         },
         "phones": {
             "bsonType": "array",
@@ -46,23 +55,75 @@
                 "bsonType": "object",
                 "properties": {
                     "areaCode": {
-                        "bsonType": "string"
+                        "bsonType": "string",
+                        "description": "Area code must be a string and is required",
+                        "maxLength": 4,
+                        "minLength": 2
                     },
                     "location": {
-                        "bsonType": "string"
+                        "description": "Must be either Home, Personal or Other",
+                        "enum": [
+                            "Home",
+                            "Personal",
+                            "Other"
+                        ]
                     },
                     "number": {
-                        "bsonType": "string"
+                        "bsonType": "string",
+                        "description": "Number must be a string and is required",
+                        "maxLength": 15,
+                        "minLength": 8
+                    }
+                },
+                "required": [
+                    "areaCode",
+                    "number",
+                    "location"
+                ]
+            },
+            "maxItems": 5,
+            "minItems": 1
+        },
+        "picture": {
+            "bsonType": "string",
+            "description": "Picture must be a valid image if the field exists"
+        },
+        "authProviders": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "pid": {
+                        "bsonType": "string",
+                        "description": "Provider ID must be a valid document"
+                    },
+                    "provider": {
+                        "description": "Picture must be a valid image if the field exists",
+                        "enum": [
+                            "Google",
+                            "Facebook",
+                            "Apple",
+                            "Email"
+                        ]
                     }
                 }
             }
         },
-        "picture": {
-            "bsonType": "string"
-        },
         "type": {
-            "bsonType": "string"
+            "description": "Must be either Owner, Employee or Customer",
+            "enum": [
+                "Owner",
+                "Employee",
+                "Customer",
+                "Guest"
+            ]
         }
     },
+    "required": [
+        "givenName",
+        "familyName",
+        "phones",
+        "emails"
+    ],
     "title": "user"
 }
