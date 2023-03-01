@@ -24,7 +24,7 @@
             }
         },
         "local": {
-            "bsonType": "string"
+            "bsonType": "objectId"
         },
         "subtotal": {
             "bsonType": "double"
