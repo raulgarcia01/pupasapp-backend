@@ -4,5 +4,11 @@
         "source_key": "local",
         "foreign_key": "_id",
         "is_list": false
+    },
+    "user": {
+        "ref": "#/relationship/mongodb-atlas/bwbdev/users",
+        "source_key": "user",
+        "foreign_key": "_id",
+        "is_list": false
     }
 }
