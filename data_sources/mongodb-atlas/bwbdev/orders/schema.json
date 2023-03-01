@@ -15,7 +15,7 @@
                         "minLength": 1
                     },
                     "product": {
-                        "bsonType": "objectId",
+                        "bsonType": "string",
                         "description": "Product ID must be a associated and is required"
                     },
                     "quantity": {
@@ -39,7 +39,7 @@
             "minItems": 1
         },
         "local": {
-            "bsonType": "objectId",
+            "bsonType": "string",
             "description": "Local ID must be a associated and is required"
         },
         "subtotal": {
@@ -58,7 +58,7 @@
             "minLength": 0
         },
         "user": {
-            "bsonType": "objectId",
+            "bsonType": "string",
             "description": "User ID must be a associated and is required"
         }
     },
