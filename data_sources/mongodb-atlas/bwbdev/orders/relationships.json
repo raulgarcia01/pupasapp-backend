@@ -1,10 +1,4 @@
 {
-    "local_id": {
-        "ref": "#/relationship/mongodb-atlas/bwbdev/locals",
-        "source_key": "local_id",
-        "foreign_key": "_id",
-        "is_list": false
-    },
     "user_id": {
         "ref": "#/relationship/mongodb-atlas/bwbdev/users",
         "source_key": "user_id",
