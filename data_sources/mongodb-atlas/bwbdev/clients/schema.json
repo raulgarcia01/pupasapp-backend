@@ -1,76 +1,99 @@
 {
-    "title": "client",
-    "required": [ "givenName", "familyName", "phones", "emails" ],
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
-        "givenName": {
-            "bsonType": "string",
-            "description": "Name must be a string and is required",
-            "minLength": 5,
-            "maxLength": 25
+        "emails": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "address": {
+                        "bsonType": "string",
+                        "description": "Email must a string and is required",
+                        "format": "email"
+                    },
+                    "location": {
+                        "description": "Must be either Work, Personal or Other",
+                        "enum": [
+                            "Work",
+                            "Personal",
+                            "Other"
+                        ]
+                    }
+                },
+                "required": [
+                    "address",
+                    "location"
+                ]
+            },
+            "maxItems": 5,
+            "minItems": 1
         },
         "familyName": {
             "bsonType": "string",
             "description": "Family name must be a string and is required",
-            "minLength": 5,
-            "maxLength": 25
+            "maxLength": 25,
+            "minLength": 5
         },
         "gender": {
-            "enum": [ "M", "F"],
-            "description": "Must be either Male, or Female"
+            "description": "Must be either Male, or Female",
+            "enum": [
+                "M",
+                "F"
+            ]
         },
-        "picture": {
+        "givenName": {
             "bsonType": "string",
-            "description": "Picture must be a valid image if the field exists"
-        },   
+            "description": "Name must be a string and is required",
+            "maxLength": 25,
+            "minLength": 5
+        },
         "phones": {
             "bsonType": "array",
-            "minItems": 1,
-            "maxItems": 5,
             "items": {
                 "bsonType": "object",
-                "required": [ "areaCode", "number", "location"],
                 "properties": {
                     "areaCode": {
                         "bsonType": "string",
                         "description": "Area code must be a string and is required",
-                        "minLength": 2,
-                        "maxLength": 4
+                        "maxLength": 4,
+                        "minLength": 2
                     },
                     "location": {
-                        "enum": [ "Home", "Personal", "Other"],
-						"description": "Must be either Home, Personal or Other"
+                        "description": "Must be either Home, Personal or Other",
+                        "enum": [
+                            "Home",
+                            "Personal",
+                            "Other"
+                        ]
                     },
                     "number": {
                         "bsonType": "string",
                         "description": "Number must be a string and is required",
-                        "minLength": 8,
-                        "maxLength": 15
+                        "maxLength": 15,
+                        "minLength": 8
                     }
-                }
-            }
-        },
-        "emails": {
-            "bsonType": "array",
-            "minItems": 1,
+                },
+                "required": [
+                    "areaCode",
+                    "number",
+                    "location"
+                ]
+            },
             "maxItems": 5,
-            "items": {
-                "bsonType": "object",                
-                "required": [ "address", "location"],
-                "properties": {
-                    "address": {
-                        "description": "Email must a string and is required",
-                        "bsonType": "string",
-                        "format": "email"
-                    },
-                    "location": {
-                        "enum": [ "Work", "Personal", "Other"],
-						"description": "Must be either Work, Personal or Other"
-                    }
-                }
-            }
+            "minItems": 1
+        },
+        "picture": {
+            "bsonType": "string",
+            "description": "Picture must be a valid image if the field exists"
         }
-    }    
+    },
+    "required": [
+        "givenName",
+        "familyName",
+        "phones",
+        "emails"
+    ],
+    "title": "client"
 }

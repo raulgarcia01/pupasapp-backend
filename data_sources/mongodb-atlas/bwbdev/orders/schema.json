@@ -1,13 +1,7 @@
 {
-    "title": "order",
-    "required": [ "local", "client", "details", "subtotal", "total" ],
     "properties": {
         "_id": {
             "bsonType": "objectId"
-        },
-        "local_id": {
-            "bsonType": "objectId",
-            "description": "Local ID must be a associated and is required"
         },
         "client_id": {
             "bsonType": "objectId",
@@ -15,12 +9,15 @@
         },
         "details": {
             "bsonType": "array",
-            "minItems": 1,
-            "maxItems": 50,
             "items": {
                 "bsonType": "object",
-                "required": [ "product", "quantity"],
                 "properties": {
+                    "cost": {
+                        "bsonType": "double",
+                        "description": "Product cost must be a number and is required",
+                        "maxLength": 9999,
+                        "minLength": 1
+                    },
                     "product_id": {
                         "bsonType": "objectId",
                         "description": "Product ID must be a associated and is required"
@@ -28,23 +25,27 @@
                     "quantity": {
                         "bsonType": "int",
                         "description": "Quantity must be a number and is required",
-                        "minLength": 1,
-                        "maxLength": 9999
-                    },
-                    "cost": {
-                        "bsonType": "double",
-                        "description": "Product cost must be a number and is required",
-                        "minLength": 1,
-                        "maxLength": 9999
+                        "maxLength": 9999,
+                        "minLength": 1
                     },
                     "value": {
                         "bsonType": "double",
                         "description": "Cost value must be a number and is required",
-                        "minLength": 1,
-                        "maxLength": 9999
+                        "maxLength": 9999,
+                        "minLength": 1
                     }
-                }
-            }
+                },
+                "required": [
+                    "product",
+                    "quantity"
+                ]
+            },
+            "maxItems": 50,
+            "minItems": 1
+        },
+        "local_id": {
+            "bsonType": "objectId",
+            "description": "Local ID must be a associated and is required"
         },
         "subtotal": {
             "bsonType": "double",
@@ -54,12 +55,20 @@
         "tax": {
             "bsonType": "double",
             "description": "Tax value must be a number and is required",
-             "minLength": 0
+            "minLength": 0
         },
         "total": {
             "bsonType": "double",
             "description": "Total must be a number and is required",
             "minLength": 0
         }
-    }
+    },
+    "required": [
+        "local",
+        "client",
+        "details",
+        "subtotal",
+        "total"
+    ],
+    "title": "order"
 }
