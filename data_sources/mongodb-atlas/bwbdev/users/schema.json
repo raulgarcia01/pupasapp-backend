@@ -3,6 +3,27 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "authProviders": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "pid": {
+                        "bsonType": "string",
+                        "description": "Provider ID must be a valid document"
+                    },
+                    "provider": {
+                        "description": "Picture must be a valid image if the field exists",
+                        "enum": [
+                            "Google",
+                            "Facebook",
+                            "Apple",
+                            "Email"
+                        ]
+                    }
+                }
+            }
+        },
         "emails": {
             "bsonType": "array",
             "items": {
@@ -87,27 +108,6 @@
         "picture": {
             "bsonType": "string",
             "description": "Picture must be a valid image if the field exists"
-        },
-        "authProviders": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "object",
-                "properties": {
-                    "pid": {
-                        "bsonType": "string",
-                        "description": "Provider ID must be a valid document"
-                    },
-                    "provider": {
-                        "description": "Picture must be a valid image if the field exists",
-                        "enum": [
-                            "Google",
-                            "Facebook",
-                            "Apple",
-                            "Email"
-                        ]
-                    }
-                }
-            }
         },
         "type": {
             "description": "Must be either Owner, Employee or Customer",
