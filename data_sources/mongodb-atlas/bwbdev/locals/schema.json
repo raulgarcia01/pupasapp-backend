@@ -63,10 +63,5 @@
             "description": "Picture must be a valid image if the field exists"
         }
     },
-    "required": [
-        "localName",
-        "phones",
-        "emails"
-    ],
     "title": "local"
 }
