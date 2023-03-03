@@ -3,6 +3,10 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "local": {
+            "bsonType": "objectId",
+            "description": "Local ID must be a associated and is required"
+        },
         "picture": {
             "bsonType": "string",
             "description": "Picture must be a valid image if the field exists"
@@ -26,10 +30,6 @@
             "description": "Value must be a number and is required",
             "maximum": 9999,
             "minimum": 0
-        },
-        "local": {
-            "bsonType": "objectId",
-            "description": "Local ID must be a associated and is required"
         }
     },
     "required": [
