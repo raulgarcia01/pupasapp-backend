@@ -117,6 +117,10 @@
                 "Customer",
                 "Guest"
             ]
+        },
+        "local": {
+            "bsonType": "objectId",
+            "description": "Local ID must be a associated and is required"
         }
     },
     "required": [

@@ -26,12 +26,17 @@
             "description": "Value must be a number and is required",
             "maximum": 9999,
             "minimum": 0
+        },
+        "local": {
+            "bsonType": "objectId",
+            "description": "Local ID must be a associated and is required"
         }
     },
     "required": [
         "productName",
         "type",
-        "value"
+        "value",
+        "local"
     ],
     "title": "product"
 }
