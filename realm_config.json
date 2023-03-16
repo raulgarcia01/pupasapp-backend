@@ -5,5 +5,8 @@
     "location": "US-VA",
     "provider_region": "azure-eastus2",
     "deployment_model": "LOCAL",
-    "environment": "development"
+    "environment": "development",
+    "allowed_request_origins": [
+        "https://splendid-mvp-rt522.cloud.serverless.com:80"
+    ]
 }
