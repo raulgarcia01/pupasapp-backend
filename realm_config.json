@@ -7,6 +7,6 @@
     "deployment_model": "LOCAL",
     "environment": "development",
     "allowed_request_origins": [
-        "https://splendid-mvp-rt522.cloud.serverless.com:443"
+        "users://splendid-mvp-rt522.cloud.serverless.com:443"
     ]
 }
