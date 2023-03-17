@@ -20,7 +20,7 @@
         },
         "secret_config": {
             "signingKeys": [
-                "MyNewSecret"
+                "NewKeyValue"
             ]
         },
         "disabled": false
