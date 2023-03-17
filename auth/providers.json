@@ -23,6 +23,6 @@
                 "NewKeyValue"
             ]
         },
-        "disabled": false
+        "disabled": true
     }
 }
