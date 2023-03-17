@@ -8,5 +8,21 @@
         "name": "api-key",
         "type": "api-key",
         "disabled": false
+    },
+    "custom-token": {
+        "name": "custom-token",
+        "type": "custom-token",
+        "config": {
+            "audience": [],
+            "requireAnyAudience": false,
+            "signingAlgorithm": "HS256",
+            "useJWKURI": false
+        },
+        "secret_config": {
+            "signingKeys": [
+                "MyNewSecret"
+            ]
+        },
+        "disabled": false
     }
 }
